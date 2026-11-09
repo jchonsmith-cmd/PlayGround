@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#101210">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23101210'/%3E%3Cpath d='M4 8h24L15 24H4z' fill='%23d5ec55'/%3E%3C/svg%3E">
+  <title>DEAD CHANNEL // Sector 09</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="Isometric sci-fi shooter game"></canvas>
+    <div class="scanlines" aria-hidden="true"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">▰</span><div><b>DEAD CHANNEL</b><small>BLACKSITE // SECTOR 09</small></div></div>
+      <div class="mission"><span class="live-dot"></span> LIVE FEED <span class="mission-divider">/</span> <span id="mission-text">FIND THE KEYCARDS</span></div>
+      <button id="sound-button" class="sound-button" aria-label="Toggle sound">♪ <span>SOUND ON</span></button>
+    </header>
+    <section class="hud" aria-label="Game status">
+      <div class="hud-card vitals"><div class="hud-label">VITALS <span id="health-value">100</span>%</div><div class="meter"><i id="health-bar"></i></div><div class="hud-sub">ARMOR <span id="armor-value">40</span></div></div>
+      <div class="hud-card objective"><div class="hud-label">ACCESS KEYS</div><div class="key-row"><span class="key-icon">◆</span><span class="key-icon">◆</span><span class="key-icon">◆</span><span id="key-count">0 / 3</span></div></div>
+      <div class="hud-card threat"><div class="hud-label">HOSTILES <span class="alert-pip"></span></div><div class="threat-number" id="enemy-count">06</div><div class="hud-sub">IN SECTOR</div></div>
+    </section>
+    <div class="crosshair-hint">WASD / ARROWS <span>MOVE</span><i></i> SPACE / CLICK <span>FIRE</span></div>
+    <div class="mobile-controls" aria-label="Touch controls">
+      <div class="dpad">
+        <button data-dir="up" aria-label="Move up">▲</button>
+        <button data-dir="left" aria-label="Move left">◀</button>
+        <button data-dir="down" aria-label="Move down">▼</button>
+        <button data-dir="right" aria-label="Move right">▶</button>
+      </div>
+      <button id="fire-button" class="fire-button" aria-label="Fire weapon"><span>FIRE</span><b>●</b></button>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <div class="overlay" id="overlay">
+      <div class="title-kicker"><span>EMERGENCY BROADCAST // 09.17.84</span><span class="redacted">[ CLASSIFIED ]</span></div>
+      <h1>DEAD<br><em>CHANNEL</em></h1>
+      <p class="intro">Something got loose in the lower decks.<br>Find the access keys. Reach the extraction door.<br><strong>Don't let them surround you.</strong></p>
+      <div class="briefing"><span>01</span><div><b>RECOVER 3 KEYCARDS</b><small>They open the blast door.</small></div><span class="brief-divider"></span><div><b>STAY MOBILE</b><small>They hunt by sound.</small></div></div>
+      <button class="start-button" id="start-button">ENTER THE SECTOR <span>▶</span></button>
+      <div class="control-note">MOVE <b>W A S D</b> <i>·</i> FIRE <b>SPACE / TAP</b> <i>·</i> PHONE <b>TOUCH CONTROLS</b></div>
+    </div>
+    <footer class="bottom-bar"><span>UAC // INCIDENT 0917-B</span><span>NO SIGNAL <b>▰▰▱▱</b></span><span id="sector-label">SECTOR 09 — LOWER RESEARCH</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
